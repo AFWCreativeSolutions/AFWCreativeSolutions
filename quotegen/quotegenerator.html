@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Positivity Generator</title>
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0026ff6b;
+  background-image: url("img/cloud.jpg");
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  color: #FFFFFF;
+  text-shadow: #FFFFFF;
+}
+
+h1 {
+  color: #c0c0c0;
+}
+
+h2 {
+  font-size: x-small;
+}
+
+.container {
+  width: 100%;
+  height: 80vh;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(0, 17, 255, 0.3);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(1, 1, 1, 0.4);
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 500%;
+  height: 500%;
+  background: linear-gradient(
+    -45deg,
+    rgba(255, 0, 0, 0.4),
+    rgba(255, 165, 0, 0.4),
+    rgba(255, 255, 0, 0.4),
+    rgba(0, 128, 0, 0.4),
+    rgba(0, 0, 255, 0.4),
+    rgba(75, 0, 130, 0.4),
+    rgba(238, 130, 238, 0.4),
+    rgba(255, 0, 0, 0.4)
+
+  );
+  opacity: 0.1;
+  transform: rotate(40deg);
+  animation: shimmer 5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: rotate(40deg) translateX(-50%);
+  }
+  100% {
+    transform: rotate(40deg) translateX(150%);
+  }
+}
+
+
+@keyframes shimmer {
+  0% {
+    transform: rotate(45deg) translateX(-50%);
+  }
+  150% {
+    transform: rotate(45deg) translateX(150%);
+  }
+}
+
+#quote {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #000000;
+  z-index: 55;
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+  #quote {
+    font-size: 100px;
+  }
+  .container {
+  max-width: fit-content;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+}
+
+
+
+#author {
+  font-weight: bolder;
+  font-size: 18px;
+  font-style: italic;
+  color: hsl(0, 0%, 100%);
+}
+
+#new-quote {
+  padding: 10px 20px;
+  background-color: #1100ff;
+  color: #FFFFFF;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#new-quote:hover {
+  background-color: #000000;
+}
+
+</style>  
+</head>
+<body>
+  <div class="container">
+    <h1>Positivity Generator</h1>
+    <div id="quote-container">
+      <p id="quote"></p>
+      <p id="author"></p>
+      <a href="quotegenerator.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" style="fill: rgba(64, 64, 64, 0.89);transform: rotate(90deg);msFilter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);"><path d="M10 11H7.101l.001-.009a4.956 4.956 0 0 1 .752-1.787 5.054 5.054 0 0 1 2.2-1.811c.302-.128.617-.226.938-.291a5.078 5.078 0 0 1 2.018 0 4.978 4.978 0 0 1 2.525 1.361l1.416-1.412a7.036 7.036 0 0 0-2.224-1.501 6.921 6.921 0 0 0-1.315-.408 7.079 7.079 0 0 0-2.819 0 6.94 6.94 0 0 0-1.316.409 7.04 7.04 0 0 0-3.08 2.534 6.978 6.978 0 0 0-1.054 2.505c-.028.135-.043.273-.063.41H2l4 4 4-4zm4 2h2.899l-.001.008a4.976 4.976 0 0 1-2.103 3.138 4.943 4.943 0 0 1-1.787.752 5.073 5.073 0 0 1-2.017 0 4.956 4.956 0 0 1-1.787-.752 5.072 5.072 0 0 1-.74-.61L7.05 16.95a7.032 7.032 0 0 0 2.225 1.5c.424.18.867.317 1.315.408a7.07 7.07 0 0 0 2.818 0 7.031 7.031 0 0 0 4.395-2.945 6.974 6.974 0 0 0 1.053-2.503c.027-.135.043-.273.063-.41H22l-4-4-4 4z"></path></svg>
+    </a>
+    </div>
+    
+    
+  </div>
+  
+  <script>
+  
+    var quotes = [
+
+{ quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+{ quote: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+{ quote: "In the middle of every difficulty lies opportunity.", author: "Albert Einstein" },
+{ quote: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+{ quote: "The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well.", author: "Ralph Waldo Emerson" },
+{ quote: "Life isn't about finding yourself. It's about creating yourself.", author: "George Bernard Shaw" },
+{ quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+{ quote: "In the end, we will remember not the words of our enemies, but the silence of our friends.", author: "Martin Luther King Jr." },
+{ quote: "The greatest glory in living lies not in never falling, but in rising every time we fall.", author: "Nelson Mandela" },
+{ quote: "Life is 10% what happens to us and 90% how we react to it.", author: "Charles R. Swindoll" },
+{ quote: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+{ quote: "The best way to predict the future is to create it.", author: "Peter Drucker" },
+{ quote: "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.", author: "Buddha" },
+{ quote: "The only limit to our realization of tomorrow will be our doubts of today.", author: "Franklin D. Roosevelt" },
+{ quote: "Life is really simple, but we insist on making it complicated.", author: "Confucius" },
+{ quote: "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.", author: "Albert Schweitzer" },
+{ quote: "The purpose of our lives is to be happy.", author: "Dalai Lama" },
+{ quote: "Your time is limited, don't waste it living someone else's life.", author: "Steve Jobs" },
+{ quote: "The true meaning of life is to plant trees, under whose shade you do not expect to sit.", author: "Nelson Henderson" },
+{ quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+{ quote: "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.", author: "Christian D. Larson" },
+{ quote: "You are never too old to set another goal or to dream a new dream.", author: "C.S. Lewis" },
+{ quote: "Life is 10% what happens to us and 90% how we react to it.", author: "Charles R. Swindoll" },
+{ quote: "The greatest glory in living lies not in never falling, but in rising every time we fall.", author: "Nelson Mandela" },
+{ quote: "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart.", author: "Roy T. Bennett" },
+{ quote: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+{ quote: "In the end, we only regret the chances we didn't take.", author: "Lewis Carroll" },
+{ quote: "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.", author: "Albert Schweitzer" },
+{ quote: "You miss 100% of the shots you don't take.", author: "Wayne Gretzky" },
+{ quote: "The best way to predict the future is to create it.", author: "Peter Drucker" },
+{ quote: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+{ quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+{ quote: "You are never too old to set another goal or to dream a new dream.", author: "C.S. Lewis" },
+{ quote: "The greatest glory in living lies not in never falling, but in rising every time we fall.", author: "Nelson Mandela" },
+{ quote: "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart.", author: "Roy T. Bennett" },
+{ quote: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+{ quote: "In the end, we only regret the chances we didn't take.", author: "Lewis Carroll" },
+{ quote: "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.", author: "Albert Schweitzer" },
+{ quote: "You miss 100% of the shots you don't take.", author: "Wayne Gretzky" },
+{ quote: "The best way to predict the future is to create it.", author: "Peter Drucker" },
+{ quote: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+{ quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+{ quote: "You are never too old to set another goal or to dream a new dream.", author: "C.S. Lewis" },
+{ quote: "The greatest glory in living lies not in never falling, but in rising every time we fall.", author: "Nelson Mandela" },
+{ quote: "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart.", author: "Roy T. Bennett" },
+{ quote: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+{ quote: "In the end, we only regret the chances we didn't take.", author: "Lewis Carroll" },
+{ quote: "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.", author: "Albert Schweitzer" },
+{ quote: "You miss 100% of the shots you don't take.", author: "Wayne Gretzky" },
+{ quote: "The best way to predict the future is to create it.", author: "Peter Drucker" },
+{ quote: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+{ quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+{ quote: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+{ quote: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+{ quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+{ quote: "The secret to getting ahead is getting started.", author: "Mark Twain" },
+{ quote: "Don't watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+{ quote: "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.", author: "Christian D. Larson" },
+{ quote: "You are never too old to set another goal or to dream a new dream.", author: "C.S. Lewis" },
+{ quote: "The only limit to our realization of tomorrow will be our doubts of today.", author: "Franklin D. Roosevelt" },
+{ quote: "The best way to predict the future is to create it.", author: "Peter Drucker" },
+{ quote: "Your time is limited, don't waste it living someone else's life.", author: "Steve Jobs" },
+{ quote: "Challenges are what make life interesting and overcoming them is what makes life meaningful.", author: "Joshua J. Marine" },
+{ quote: "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.", author: "Albert Schweitzer" },
+{ quote: "The greatest glory in living lies not in never falling, but in rising every time we fall.", author: "Nelson Mandela" },
+{ quote: "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart.", author: "Roy T. Bennett" },
+{ quote: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+{ quote: "In the end, we only regret the chances we didn't take.", author: "Lewis Carroll" },
+{ quote: "The only limit to our realization of tomorrow will be our doubts of today.", author: "Franklin D. Roosevelt" },
+{ quote: "Everything you've ever wanted is on the other side of fear.", author: "George Addair" },
+{ quote: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+{ quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+{ quote: "You miss 100% of the shots you don't take.", author: "Wayne Gretzky" },
+{ quote: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+{ quote: "The only limit to our realization of tomorrow will be our doubts of today.", author: "Franklin D. Roosevelt" },
+{ quote: "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.", author: "Christian D. Larson" },
+{ quote: "You are never too old to set another goal or to dream a new dream.", author: "C.S. Lewis" },
+{ quote: "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.", author: "Albert Schweitzer" },
+{ quote: "The greatest glory in living lies not in never falling, but in rising every time we fall.", author: "Nelson Mandela" },
+{ quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+{ quote: "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart.", author: "Roy T. Bennett" },
+{ quote: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+{ quote: "In the end, we only regret the chances we didn't take.", author: "Lewis Carroll" },
+{ quote: "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.", author: "Albert Schweitzer" },
+{ quote: "You miss 100% of the shots you don't take.", author: "Wayne Gretzky" },
+{ quote: "The best way to predict the future is to create it.", author: "Peter Drucker" },
+{ quote: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+{ quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+{ quote: "You are never too old to set another goal or to dream a new dream.", author: "C.S. Lewis" },
+{ quote: "The greatest glory in living lies not in never falling, but in rising every time we fall.", author: "Nelson Mandela" },
+{ quote: "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart.", author: "Roy T. Bennett" },
+{ quote: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+{ quote: "In the end, we only regret the chances we didn't take.", author: "Lewis Carroll" },
+{ quote: "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.", author: "Albert Schweitzer" },
+{ quote: "You miss 100% of the shots you don't take.", author: "Wayne Gretzky" },
+{ quote: "The best way to predict the future is to create it.", author: "Peter Drucker" },
+{ quote: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+{ quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+{ quote: "You are never too old to set another goal or to dream a new dream.", author: "C.S. Lewis" },
+{ quote: "The greatest glory in living lies not in never falling, but in rising every time we fall.", author: "Nelson Mandela" },
+      
+    ];
+    
+    var quoteElement = document.getElementById("quote");
+    var authorElement = document.getElementById("author");
+    var newQuoteButton = document.getElementById("new-quote");
+    
+    // generate a random quote
+    function generateRandomQuote() {
+      var randomIndex = Math.floor(Math.random() * quotes.length);
+      var randomQuote = quotes[randomIndex];
+      
+      quoteElement.textContent = randomQuote.quote;
+      authorElement.textContent = "- " + randomQuote.author;
+    }
+    
+    // Generate a random quote on page load
+    generateRandomQuote();
+    
+    // Event listener for the button
+    newQuoteButton.addEventListener("click", generateRandomQuote);
+  </script>
+</body>
+</html>
+

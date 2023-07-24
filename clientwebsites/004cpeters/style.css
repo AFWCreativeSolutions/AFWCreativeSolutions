@@ -1,0 +1,203 @@
+* {
+  text-decoration: none;
+}
+
+*:hover { text-decoration: none; color:#ff7b00; }
+*:focus { text-decoration: none; color:#ff7b00; }
+*:active { text-decoration: none; color:#ff7b00; }
+
+a:hover { text-decoration: none; color:#ff7b00; }
+a:focus { text-decoration: none; color:#ff7b00; }
+a:active { text-decoration: none; color:#ff7b00; }
+
+a:visited { 
+  text-decoration: none;
+  color: #ff7b00; 
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #000f25;
+  color: #ff7b00;
+}
+
+button {
+  align-items: center;
+  background-image: linear-gradient(to left, #000f25, #333);
+  border: none;
+  color: #ff7b00;
+  font-size: larger;
+  padding: 15px 32px;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5%;
+  min-width: 20%;
+}
+
+button:hover { text-decoration: none; color:#ff7b00; }
+button:focus { text-decoration: none; color:#ff7b00; }
+button:active { text-decoration: none; color:#ff7b00;}
+.button:hover { text-decoration: none; color:#ff7b00; }
+.button:focus { text-decoration: none; color:#ff7b00; }
+.button:active { text-decoration: none; color:#ff7b00; }
+
+header {
+  background-image: linear-gradient(to right, #333, #000f25);
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 24px;
+  color: #ff7b00;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 15px;
+}
+
+nav ul li a {
+  color: #ff7b00;
+  text-decoration: none;
+  font-family: 'Pacifico', cursive;
+}
+
+li {
+  min-width: max-content;
+  background-image: linear-gradient(to left, #333, #000f25);
+  border-radius: 10%;
+  padding-left: 2%;
+}
+
+main {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.row > div {
+  flex: 1;
+  padding: 10px;
+  background-color: #000f25;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+footer {
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #ff7b00;
+}
+
+/* styles */
+
+
+/* Mobile devices */
+@media only screen and (max-width: 767px) {
+
+  header {
+    padding: 5px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  nav {
+    flex-direction: column; /* Change flex direction to column */
+    align-items: flex-start; /* Adjust alignment for vertical layout */
+  }
+
+  nav ul {
+    flex-direction: column; /* Change flex direction to column */
+  }
+
+  nav ul li {
+    margin-left: 0; /* Remove margin-left to stack items vertically */
+    margin-bottom: 10px; /* Add margin-bottom for spacing */
+  }
+
+  main {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .row {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  .row > div {
+    margin-bottom: 10px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
+
+/* Computer devices */
+@media only screen and (min-width: 768px) {
+  nav {
+    flex-direction: row; /* Change flex direction to row */
+    align-items: center; /* Adjust alignment for horizontal layout */
+  }
+
+  nav ul {
+    flex-direction: row; /* Change flex direction to row */
+  }
+
+  nav ul li {
+    margin-left: 15px; /* Add back the margin-left for horizontal layout */
+    margin-bottom: 0; /* Remove margin-bottom */
+  }
+
+  /* Rest of the styles for computer devices */
+  header {
+    padding: 15px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .row > div {
+    padding: 20px;
+  }
+
+  footer {
+    padding: 20px;
+  }
+}
+
+With these changes, the navigation items should appear vertically on phone-sized screens and horizontally on computer-sized screens.

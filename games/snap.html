@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Match a Pair Game</title>
+  <style>
+    /* Add your CSS styling here */
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <h1>Match a Pair Game</h1>
+    <div class="score">Score: <span id="score">0</span></div>
+    <div class="timer">Time: <span id="timer">0</span>s</div>
+    <div class="board"></div>
+    <div class="button-container">
+      <button class="button" id="start-button">Start Game</button>
+    </div>
+  </div>
+
+  <script>
+   // Define an array of card symbols
+const symbols = ['♠', '♣', '♥', '♦'];
+
+// Shuffle the symbols randomly
+const shuffledSymbols = symbols
+  .concat(symbols) // Duplicate the symbols to create pairs
+  .sort(() => Math.random() - 0.5); // Shuffle the array
+
+// Get the board element
+const board = document.querySelector('.board');
+
+// Create card elements dynamically
+shuffledSymbols.forEach((symbol) => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.textContent = symbol;
+  board.appendChild(card);
+});
+
+// Add event listener for card clicks
+let openedCards = [];
+let matchedCards = 0;
+let score = 0;
+
+board.addEventListener('click', (event) => {
+  const clickedCard = event.target;
+  
+  // Only handle click events on cards
+  if (!clickedCard.classList.contains('card')) {
+    return;
+  }
+  
+  // Prevent opening more than 2 cards simultaneously
+  if (openedCards.length >= 2) {
+    return;
+  }
+  
+  // Toggle card open state
+  clickedCard.classList.toggle('open');
+  
+  // Add the clicked card to the opened cards array
+  openedCards.push(clickedCard);
+  
+  // Check if two cards are opened
+  if (openedCards.length === 2) {
+    // Disable board clicks while comparing cards
+    board.style.pointerEvents = 'none';
+    
+    // Get the symbols of the opened cards
+    const [symbol1, symbol2] = openedCards.map((card) => card.textContent);
+    
+    // Check if the symbols match
+    if (symbol1 === symbol2) {
+      // Match found
+      openedCards.forEach((card) => {
+        card.classList.add('matched');
+      });
+      
+      matchedCards += 2;
+      score += 10;
+      
+      // Check if all cards are matched
+      if (matchedCards === shuffledSymbols.length) {
+        alert('Congratulations! You won the game!');
+      }
+    } else {
+      // Symbols do not match
+      score -= 1;
+      
+      // Close the cards after a delay
+      setTimeout(() => {
+        openedCards.forEach((card) => {
+          card.classList.remove('open');
+        });
+        
+        // Enable board clicks again
+        board.style.pointerEvents = 'auto';
+      }, 1000);
+    }
+    
+    // Update the score on the page
+    document.getElementById('score').textContent = score;
+    
+    // Clear the opened cards array
+    openedCards = [];
+  }
+});
+
+// Add event listener for start button click
+const startButton = document.getElementById('start-button');
+startButton.addEventListener('click', () => {
+  // Shuffle the symbols again for a new game
+  shuffledSymbols.sort(() => Math.random() - 0.5);
+  
+  // Reset game state
+  openedCards = [];
+  matchedCards = 0;
+  score = 0;
+  
+  // Clear the board
+  board.innerHTML = '';
+  
+  // Create new card elements
+  shuffledSymbols.forEach((symbol) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.textContent = symbol;
+    board.appendChild(card);
+  });
+  
+  // Reset the score on the page
+  document.getElementById('score').textContent = score;
+});
+
+  </script>
+</body>
+</html>
+
+
+
+
+
