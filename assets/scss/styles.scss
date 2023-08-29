@@ -1,4 +1,4 @@
---- # this ensures Jekyll reads the file to be transformed into CSS later --- 
+
 /*===== GOOGLE FONTS =====*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
@@ -69,7 +69,7 @@ img{
 }
 
 /*===== CLASS CSS ===== */
-.section-title{
+.section-title {
     position: relative;
     font-size: var(--h2-font-size);
     color: var(--first-color);
