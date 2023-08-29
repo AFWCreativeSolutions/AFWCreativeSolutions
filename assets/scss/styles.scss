@@ -1,3 +1,4 @@
+--- # this ensures Jekyll reads the file to be transformed into CSS later --- 
 /*===== GOOGLE FONTS =====*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
@@ -75,6 +76,7 @@ img{
     margin-top: var(--mb-2);
     margin-bottom: var(--mb-4);
     text-align: center;
+}
 
     &::after{
         position: absolute;
